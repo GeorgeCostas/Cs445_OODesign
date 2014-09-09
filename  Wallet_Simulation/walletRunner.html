@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Coin Wallet</title>
+</head>
+<script type="text/javascript">
+    var aPenny = new Coin("Penny", 1, 0);
+    var aDime = new Coin("Dime", 10, 0);
+    var aQuarter = new Coin("Quarter", 25, 0);
+    var aNickle = new Coin("Nickle", 5, 0);
+    var coinList = new Array(aPenny,aNickle,aDime,aQuarter);
+    var myWallet = new Wallet(coinList);
+
+    function Wallet(aCoinList) {
+        this.aCoinList = aCoinList;
+
+        this.addCoin = addCoinToWallet;
+        this.toString = walletToString;
+    }
+
+
+    function addCoinToWallet() {
+        var type = document.getElementById('coinType').value;
+        var value = document.getElementById('coinValue').value;
+        var intValue = parseInt(value);
+        var quantity = document.getElementById('coinQuantity').value;
+        var intQuantity = parseInt(quantity);
+
+        var aCoin = new Coin(type, intValue, intQuantity);
+        var matchCoin = false;
+
+        for (var i = 0, len = myWallet.aCoinList.length; i < len; i++) {
+            if (myWallet.aCoinList[i].equals(aCoin)) {
+                matchCoin = true;
+                myWallet.aCoinList[i].coinQuantity += aCoin.coinQuantity;
+                
+            }
+        }
+        if (matchCoin === false) {
+            myWallet.aCoinList.push(aCoin);
+        }
+        walletToString();
+    }
+
+    function walletToString(){
+        var list = "";
+        for(var i = 0, len = myWallet.aCoinList.length; i < len; i++){
+            list += "<li>"+ myWallet.aCoinList[i].coinType+" ( "+ myWallet.aCoinList[i].coinValue+") quantity: "+ myWallet.aCoinList[i].coinQuantity+"</li>";
+        }
+        document.getElementById('content').innerHTML = list;
+    }
+
+    function Coin(coinType, coinValue, coinQuantity) {
+        this.coinType = coinType;
+        this.coinValue = coinValue;
+        this.coinQuantity = coinQuantity;
+
+        this.equals = coinEquals;
+        this.toString = coinToString;
+    }
+    
+    function coinEquals(aCoin) {
+        if (this.coinType === aCoin.coinType && this.coinValue === aCoin.coinValue) {
+            return true;
+        } else {
+           return false;
+        }
+    }
+    function coinToString() {
+        var coinInfo = "type: " + this.coinType + "(" + this.coinValue + ") " + this.coinQuantity;
+        document.getElementById('content').innerHTML = coinInfo;
+    }
+</script>
+
+<body onload ="myFunction()">
+    <form onsubmit ="return false">
+        Coin Type: <input type ="text" name="coinType" id ="coinType"><br>
+        Coin Value: <input type ="text" name="coinValue" id="coinValue"><br>
+        Coin Quantity: <input type ="text" name="coinQuantity" id="coinQuantity"><br>
+        <input type ="submit" value="Submit" onclick="addCoinToWallet()">
+    </form>
+    <div id ="content"></div>
+  
+</body>
+
+</html>

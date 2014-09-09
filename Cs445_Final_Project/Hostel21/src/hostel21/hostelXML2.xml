@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<hostel>
+	<name>Hostel 21 - Romantic</name>
+	<address>
+		<street>123 Main Street</street>
+		<city>Anytown</city>
+		<state>Anystate</state>
+		<postal_code>10456-7890</postal_code>
+		<country>USA</country>
+	</address>
+	<contact>
+		<phone>+1-555-555-5555</phone>
+		<email>romantic@hostel21.com</email>
+		<facebook>hostel21-romantic</facebook>
+		<web>romantic.hostel21.com</web>
+	</contact>
+	<restrictions>
+		<check_in_time>14:00</check_in_time>
+		<check_out_time>11:00</check_out_time>
+		<smoking>N</smoking>
+		<alcohol>N</alcohol>
+	</restrictions>
+	<availability>
+		<date>20131003</date>
+		<room>1</room>
+		<bed>2</bed>
+		<price>25</price>
+	</availability>
+	<availability>
+		<date>20131004</date>
+		<room>2</room>
+		<bed>7</bed>
+		<price>31</price>
+	</availability>
+</hostel>
+<hostel>
+	<name>Hostel 21 - Urban</name>
+	<address>
+		<street>b567 Wayne Street</street>
+		<city>bAnytown</city>
+		<state>bAnystate</state>
+		<postal_code>b10456-7890</postal_code>
+		<country>bUSA</country>
+	</address>
+	<contact>
+		<phone>b+1-555-555-5555</phone>
+		<email>bUrban@hostel21.com</email>
+		<facebook>bHostel21-urban</facebook>
+		<web>bUrban.hostel21.com</web>
+	</contact>
+	<restrictions>
+		<check_in_time>13:00</check_in_time>
+		<check_out_time>10:00</check_out_time>
+		<smoking>N</smoking>
+		<alcohol>N</alcohol>
+		<cancellation_deadline>2</cancellation_deadline>
+		<cancellation_penalty>75%</cancellation_penalty>
+	</restrictions>
+	<availability>
+		<date>b20131003</date>
+		<room>b1</room>
+		<bed>b2</bed>
+		<price>b25</price>
+	</availability>
+	<availability>
+		<date>b20131004</date>
+		<room>b2</room>
+		<bed>b7</bed>
+		<price>b31</price>
+	</availability>
+	<availability>
+		<date>b20131005</date>
+		<room>b3</room>
+		<bed>b6</bed>
+		<price>b30</price>
+	</availability>
+</hostel>		
+		
+
